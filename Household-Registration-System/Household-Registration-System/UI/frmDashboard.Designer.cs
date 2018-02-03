@@ -167,6 +167,7 @@
             this.firstInstallmentToolStripMenuItem.Name = "firstInstallmentToolStripMenuItem";
             this.firstInstallmentToolStripMenuItem.Size = new System.Drawing.Size(212, 26);
             this.firstInstallmentToolStripMenuItem.Text = "First Installment";
+            this.firstInstallmentToolStripMenuItem.Click += new System.EventHandler(this.firstInstallmentToolStripMenuItem_Click);
             // 
             // secondInstallmentToolStripMenuItem
             // 

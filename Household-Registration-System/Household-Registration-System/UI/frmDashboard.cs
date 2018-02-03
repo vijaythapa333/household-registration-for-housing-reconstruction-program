@@ -18,6 +18,7 @@ namespace Household_Registration_System
             InitializeComponent();
         }
 
+        public static string paymentInstallment;
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -32,6 +33,15 @@ namespace Household_Registration_System
         {
             frmHouse house = new frmHouse();
             house.Show();
+        }
+
+        private void firstInstallmentToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //Set payment Installment
+            paymentInstallment = "First Installment";
+            //Open Form
+            frmPayment payment = new frmPayment();
+            payment.Show();
         }
     }
 }

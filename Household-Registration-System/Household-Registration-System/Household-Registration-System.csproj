@@ -66,6 +66,12 @@
     <Compile Include="UI\frmHouseCondition.Designer.cs">
       <DependentUpon>frmHouseCondition.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\frmPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmPayment.Designer.cs">
+      <DependentUpon>frmPayment.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\frmVictim.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +95,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\frmHouseCondition.resx">
       <DependentUpon>frmHouseCondition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmPayment.resx">
+      <DependentUpon>frmPayment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\frmVictim.resx">
       <DependentUpon>frmVictim.cs</DependentUpon>
