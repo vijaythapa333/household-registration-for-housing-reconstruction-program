@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Household_Registration_System.UI;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -25,6 +26,12 @@ namespace Household_Registration_System
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void addNewToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmHouse house = new frmHouse();
+            house.Show();
         }
     }
 }

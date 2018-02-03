@@ -46,15 +46,33 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmDashboard.cs">
+    <Compile Include="UI\frmDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmDashboard.Designer.cs">
+    <Compile Include="UI\frmDashboard.Designer.cs">
       <DependentUpon>frmDashboard.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmDashboard.resx">
+    <Compile Include="UI\frmHouse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmHouse.Designer.cs">
+      <DependentUpon>frmHouse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmHouseCondition.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmHouseCondition.Designer.cs">
+      <DependentUpon>frmHouseCondition.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmVictim.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmVictim.Designer.cs">
+      <DependentUpon>frmVictim.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="UI\frmDashboard.resx">
       <DependentUpon>frmDashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -66,6 +84,15 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UI\frmHouse.resx">
+      <DependentUpon>frmHouse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmHouseCondition.resx">
+      <DependentUpon>frmHouseCondition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmVictim.resx">
+      <DependentUpon>frmVictim.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -78,6 +105,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="BLL\" />
+    <Folder Include="DAL\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
