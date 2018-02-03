@@ -21,5 +21,17 @@ namespace Household_Registration_System.UI
         {
             this.Hide();
         }
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            //Save The Data First
+
+            //Close this form if House Registration Success
+            this.Hide();
+
+            //Open House Condition Form if Success
+            frmHouseCondition houseCondition = new frmHouseCondition();
+            houseCondition.Show();
+        }
     }
 }

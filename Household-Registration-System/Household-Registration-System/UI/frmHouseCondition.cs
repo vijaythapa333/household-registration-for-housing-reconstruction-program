@@ -16,5 +16,22 @@ namespace Household_Registration_System.UI
         {
             InitializeComponent();
         }
+
+        private void pictureBoxClose_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            //Save all the House Condition Details First
+
+            //Then Close this Form
+            this.Hide();
+
+            //Open House Owner Details
+            frmVictim victim = new frmVictim();
+            victim.Show();
+        }
     }
 }

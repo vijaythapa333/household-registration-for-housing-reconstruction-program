@@ -16,5 +16,20 @@ namespace Household_Registration_System.UI
         {
             InitializeComponent();
         }
+
+        private void pictureBoxClose_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            //Save The Data
+
+            //Display the Message
+
+            //Close This Form
+            this.Hide();
+        }
     }
 }

@@ -244,6 +244,7 @@
             this.btnNext.TabIndex = 0;
             this.btnNext.Text = "NEXT";
             this.btnNext.UseVisualStyleBackColor = false;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // frmHouse
             // 
