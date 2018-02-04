@@ -222,6 +222,7 @@
             this.btnBrowse.TabIndex = 22;
             this.btnBrowse.Text = "Select Photo";
             this.btnBrowse.UseVisualStyleBackColor = true;
+            this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
             // 
             // frmVictim
             // 

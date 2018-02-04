@@ -34,6 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -46,6 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\houseBLL.cs" />
+    <Compile Include="BLL\houseConditionBLL.cs" />
+    <Compile Include="BLL\victimBLL.cs" />
+    <Compile Include="DAL\houseConditionDAL.cs" />
+    <Compile Include="DAL\houseDAL.cs" />
+    <Compile Include="DAL\victimDAL.cs" />
     <Compile Include="UI\frmDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,10 +122,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="BLL\" />
-    <Folder Include="DAL\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

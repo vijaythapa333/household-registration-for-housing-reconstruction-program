@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Household_Registration_System.BLL;
+using Household_Registration_System.DAL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,17 +23,40 @@ namespace Household_Registration_System.UI
         {
             this.Hide();
         }
+        houseBLL h = new houseBLL();
+        houseDAL hdal = new houseDAL();
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            //Save The Data First
+            //Get all the Data from UI
+            h.district = txtDisctrict.Text;
+            h.vdc = txtVDC.Text;
+            h.ward_no = txtWardNo.Text;
+            h.tole = txtTole.Text;
+            h.latitude = txtLatitude.Text;
+            h.longitude = txtLongitude.Text;
+            h.altitude = txtAltitude.Text;
+            h.added_date = DateTime.Now;
 
-            //Close this form if House Registration Success
-            this.Hide();
+            bool success = hdal.Insert(h);
+            if(success==true)
+            {
+                //House Registered Successfully
+                MessageBox.Show("House Registerd Successfully. Proceed to Next Step.");
 
-            //Open House Condition Form if Success
-            frmHouseCondition houseCondition = new frmHouseCondition();
-            houseCondition.Show();
+                //Close this form if House Registration Success
+                this.Hide();
+
+                //Open House Condition Form if Success
+                frmHouseCondition houseCondition = new frmHouseCondition();
+                houseCondition.Show();
+            }
+            else
+            {
+                //FAiled to Register House
+                MessageBox.Show("Failed to Register House. Try Again.");
+            }
+            
         }
     }
 }

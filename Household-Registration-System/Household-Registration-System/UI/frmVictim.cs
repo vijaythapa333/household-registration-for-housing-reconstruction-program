@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Household_Registration_System.BLL;
+using Household_Registration_System.DAL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -22,14 +24,55 @@ namespace Household_Registration_System.UI
             this.Hide();
         }
 
+        victimBLL v = new victimBLL();
+        victimDAL vdal = new victimDAL();
+
+        static string photoPath;
+
         private void btnNext_Click(object sender, EventArgs e)
         {
-            //Save The Data
+            //Get all the Data from Form
+            v.full_name = txtFullName.Text;
+            v.dob = dtpDOB.Text;
+            v.family_members = txtFamilyMembers.Text;
+            v.father_name = txtFathersName.Text;
+            v.grand_father_name = txtGrandFathersName.Text;
 
-            //Display the Message
+            //Get the path of Selected image
+            v.photo = photoPath;
 
-            //Close This Form
-            this.Hide();
+            //Get the house id and house Condition ID form the previous forms
+            v.house_id = 1;
+            v.house_condition_id = 1;
+            v.added_date = DateTime.Now;
+
+            bool success = vdal.Insert(v);
+            if(success==true)
+            {
+                //Victim Registered Successfully
+                MessageBox.Show("House Owner Registered Successfully. Process Completed. Thank you.");
+                //Close This Form
+                this.Hide();
+            }
+            else
+            {
+                //Failed to REgister Victim
+                MessageBox.Show("Failed to Register House Owner. Please Try Again.");
+            }
+            
+
+            
+        }
+
+        private void btnBrowse_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog browse = new OpenFileDialog();
+            browse.Filter= "Images|*.png;*.jpg;*.jpeg;*.gif";
+            if(browse.ShowDialog()==DialogResult.OK)
+            {
+                photoPath = browse.FileName;
+                pictureBoxPhoto.Image= new Bitmap(browse.FileName);
+            }
         }
     }
 }
