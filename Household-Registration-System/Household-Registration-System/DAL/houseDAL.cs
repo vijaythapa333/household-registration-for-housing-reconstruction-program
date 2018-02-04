@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -63,6 +64,36 @@ namespace Household_Registration_System.DAL
             }
 
             return isSuccess;
+        }
+        #endregion
+        #region Method to Get Last Inserted house_id
+        public houseBLL GetLastinsertedHouseId()
+        {
+            houseBLL h = new houseBLL();
+            SqlConnection conn = new SqlConnection(myconnstrng);
+            DataTable dt = new DataTable();
+
+            try
+            {
+                string sql = "SELECT MAX(house_id) AS house_id FROM tbl_house";
+                SqlDataAdapter adapter = new SqlDataAdapter(sql, conn);
+                conn.Open();
+
+                adapter.Fill(dt);
+                if(dt.Rows.Count>0)
+                {
+                    h.house_id = int.Parse(dt.Rows[0]["house_id"].ToString());
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return h;
         }
         #endregion
     }

@@ -24,6 +24,8 @@ namespace Household_Registration_System.UI
             this.Hide();
         }
 
+        public static int house_condition_id;
+
         houseConditionBLL hc = new houseConditionBLL();
         houseConditionDAL hcdal = new houseConditionDAL();
 
@@ -47,7 +49,7 @@ namespace Household_Registration_System.UI
             hc.started_maintenance = cmbStartedMaintenance.Text;
             hc.other_dangers = cmbOtherDangers.Text;
             //House ID get from previous submission
-            hc.house_id = 1;
+            hc.house_id = frmHouse.house_id;
             hc.added_date = DateTime.Now;
 
             bool success = hcdal.Insert(hc);
@@ -55,6 +57,10 @@ namespace Household_Registration_System.UI
             {
                 //House Condition Registered Successfully
                 MessageBox.Show("House Condition Registered Successfully Proceed to Final Step.");
+
+                //Get the Latest House Condition ID and set it to static house_condition_id
+                houseConditionBLL hcbl = hcdal.GetlastHouseConditionId();
+                house_condition_id = hcbl.house_condition_id;
 
                 //Then Close this Form
                 this.Hide();

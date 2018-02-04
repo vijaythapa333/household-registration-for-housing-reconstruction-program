@@ -42,8 +42,8 @@ namespace Household_Registration_System.UI
             v.photo = photoPath;
 
             //Get the house id and house Condition ID form the previous forms
-            v.house_id = 1;
-            v.house_condition_id = 1;
+            v.house_id = frmHouse.house_id;
+            v.house_condition_id = frmHouseCondition.house_condition_id;
             v.added_date = DateTime.Now;
 
             bool success = vdal.Insert(v);

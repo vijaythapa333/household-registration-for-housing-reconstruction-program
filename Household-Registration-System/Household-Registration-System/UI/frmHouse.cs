@@ -26,6 +26,8 @@ namespace Household_Registration_System.UI
         houseBLL h = new houseBLL();
         houseDAL hdal = new houseDAL();
 
+        public static int house_id;
+
         private void btnNext_Click(object sender, EventArgs e)
         {
             //Get all the Data from UI
@@ -43,6 +45,10 @@ namespace Household_Registration_System.UI
             {
                 //House Registered Successfully
                 MessageBox.Show("House Registerd Successfully. Proceed to Next Step.");
+
+                //Get the Latest House ID and set it to house_id
+                houseBLL hb = hdal.GetLastinsertedHouseId();
+                house_id = hb.house_id;
 
                 //Close this form if House Registration Success
                 this.Hide();
