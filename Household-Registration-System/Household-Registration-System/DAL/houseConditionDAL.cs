@@ -107,5 +107,39 @@ namespace Household_Registration_System.DAL
             return hcb;
         }
         #endregion
+        #region METHOD TO GET HOUSE GRADE BASED ON HOUSE ID
+        public houseConditionBLL GetHouseGradeByHouseId(int house_id)
+        {
+            SqlConnection conn = new SqlConnection(myconnstrng);
+
+            houseConditionBLL hcb = new houseConditionBLL();
+
+            DataTable dt = new DataTable();
+
+            try
+            {
+                string sql = "SELECT damage_grade FROM tbl_house_condition WHERE house_id = "+house_id;
+
+                SqlDataAdapter adapter = new SqlDataAdapter(sql, conn);
+                conn.Open();
+
+                adapter.Fill(dt);
+                if(dt.Rows.Count>0)
+                {
+                    hcb.damage_grade = dt.Rows[0]["damage_grade"].ToString();
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return hcb;
+        }
+        #endregion
     }
 }

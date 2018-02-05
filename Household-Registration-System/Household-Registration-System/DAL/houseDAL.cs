@@ -96,5 +96,125 @@ namespace Household_Registration_System.DAL
             return h;
         }
         #endregion
+        #region METHOD TO GET DISTRICT BASED ON HOUSE ID
+        public houseBLL GetDistrictByHouseID(int house_id)
+        {
+            houseBLL h = new houseBLL();
+            SqlConnection conn = new SqlConnection(myconnstrng);
+            DataTable dt = new DataTable();
+
+            try
+            {
+                string sql = "SELECT district FROM tbl_house WHERE house_id="+house_id;
+                SqlDataAdapter adapter = new SqlDataAdapter(sql, conn);
+                conn.Open();
+
+                adapter.Fill(dt);
+                if (dt.Rows.Count > 0)
+                {
+                    h.district = dt.Rows[0]["district"].ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return h;
+        }
+        #endregion
+        #region METHOD TO GET VDC BASED ON HOUSE ID
+        public houseBLL GetVDCByHouseID(int house_id)
+        {
+            houseBLL h = new houseBLL();
+            SqlConnection conn = new SqlConnection(myconnstrng);
+            DataTable dt = new DataTable();
+
+            try
+            {
+                string sql = "SELECT vdc FROM tbl_house WHERE house_id=" + house_id;
+                SqlDataAdapter adapter = new SqlDataAdapter(sql, conn);
+                conn.Open();
+
+                adapter.Fill(dt);
+                if (dt.Rows.Count > 0)
+                {
+                    h.vdc = dt.Rows[0]["vdc"].ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return h;
+        }
+        #endregion
+        #region METHOD TO GET WARD NO BASED ON HOUSE ID
+        public houseBLL GetWardNoByHouseID(int house_id)
+        {
+            houseBLL h = new houseBLL();
+            SqlConnection conn = new SqlConnection(myconnstrng);
+            DataTable dt = new DataTable();
+
+            try
+            {
+                string sql = "SELECT ward_no FROM tbl_house WHERE house_id=" + house_id;
+                SqlDataAdapter adapter = new SqlDataAdapter(sql, conn);
+                conn.Open();
+
+                adapter.Fill(dt);
+                if (dt.Rows.Count > 0)
+                {
+                    h.ward_no = dt.Rows[0]["ward_no"].ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return h;
+        }
+        #endregion
+        #region METHOD TO GET TOLE BASED ON HOUSE ID
+        public houseBLL GetToleByHouseID(int house_id)
+        {
+            houseBLL h = new houseBLL();
+            SqlConnection conn = new SqlConnection(myconnstrng);
+            DataTable dt = new DataTable();
+
+            try
+            {
+                string sql = "SELECT tole FROM tbl_house WHERE house_id=" + house_id;
+                SqlDataAdapter adapter = new SqlDataAdapter(sql, conn);
+                conn.Open();
+
+                adapter.Fill(dt);
+                if (dt.Rows.Count > 0)
+                {
+                    h.tole = dt.Rows[0]["tole"].ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return h;
+        }
+        #endregion
     }
 }

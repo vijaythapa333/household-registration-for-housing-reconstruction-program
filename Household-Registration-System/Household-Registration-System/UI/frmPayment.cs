@@ -26,8 +26,10 @@ namespace Household_Registration_System.UI
         {
             //get paymentInstallment and Set on Combobox
             string paymentInstallment = frmDashboard.paymentInstallment;
+            int paymentAmount = frmDashboard.paymentAmount;
             //Set on Combobox
             cmbPaymentInstallment.Text = paymentInstallment;
+            txtPaymentAmount.Text = paymentAmount.ToString();
             //Display Victims on DAta Grid View Based on paymentInstallment
         }
     }

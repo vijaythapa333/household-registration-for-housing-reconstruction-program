@@ -142,7 +142,7 @@
             // addNewToolStripMenuItem
             // 
             this.addNewToolStripMenuItem.Name = "addNewToolStripMenuItem";
-            this.addNewToolStripMenuItem.Size = new System.Drawing.Size(152, 26);
+            this.addNewToolStripMenuItem.Size = new System.Drawing.Size(141, 26);
             this.addNewToolStripMenuItem.Text = "Register";
             this.addNewToolStripMenuItem.Click += new System.EventHandler(this.addNewToolStripMenuItem_Click);
             // 
@@ -151,6 +151,7 @@
             this.showAllToolStripMenuItem.Name = "showAllToolStripMenuItem";
             this.showAllToolStripMenuItem.Size = new System.Drawing.Size(152, 26);
             this.showAllToolStripMenuItem.Text = "Show All";
+            this.showAllToolStripMenuItem.Click += new System.EventHandler(this.showAllToolStripMenuItem_Click);
             // 
             // paymentsToolStripMenuItem
             // 
@@ -174,12 +175,14 @@
             this.secondInstallmentToolStripMenuItem.Name = "secondInstallmentToolStripMenuItem";
             this.secondInstallmentToolStripMenuItem.Size = new System.Drawing.Size(212, 26);
             this.secondInstallmentToolStripMenuItem.Text = "Second Installment";
+            this.secondInstallmentToolStripMenuItem.Click += new System.EventHandler(this.secondInstallmentToolStripMenuItem_Click);
             // 
             // thirdInstallmentToolStripMenuItem
             // 
             this.thirdInstallmentToolStripMenuItem.Name = "thirdInstallmentToolStripMenuItem";
             this.thirdInstallmentToolStripMenuItem.Size = new System.Drawing.Size(212, 26);
             this.thirdInstallmentToolStripMenuItem.Text = "Third Installment";
+            this.thirdInstallmentToolStripMenuItem.Click += new System.EventHandler(this.thirdInstallmentToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 

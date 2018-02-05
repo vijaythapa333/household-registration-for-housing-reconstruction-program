@@ -53,6 +53,12 @@
     <Compile Include="DAL\houseConditionDAL.cs" />
     <Compile Include="DAL\houseDAL.cs" />
     <Compile Include="DAL\victimDAL.cs" />
+    <Compile Include="UI\frmAllVictims.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmAllVictims.Designer.cs">
+      <DependentUpon>frmAllVictims.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\frmDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +91,9 @@
     <Compile Include="UI\frmVictim.Designer.cs">
       <DependentUpon>frmVictim.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UI\frmAllVictims.resx">
+      <DependentUpon>frmAllVictims.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\frmDashboard.resx">
       <DependentUpon>frmDashboard.cs</DependentUpon>
     </EmbeddedResource>
