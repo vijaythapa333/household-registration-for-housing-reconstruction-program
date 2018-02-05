@@ -49,9 +49,11 @@
   <ItemGroup>
     <Compile Include="BLL\houseBLL.cs" />
     <Compile Include="BLL\houseConditionBLL.cs" />
+    <Compile Include="BLL\paymentBLL.cs" />
     <Compile Include="BLL\victimBLL.cs" />
     <Compile Include="DAL\houseConditionDAL.cs" />
     <Compile Include="DAL\houseDAL.cs" />
+    <Compile Include="DAL\paymentDAL.cs" />
     <Compile Include="DAL\victimDAL.cs" />
     <Compile Include="UI\frmAllVictims.cs">
       <SubType>Form</SubType>

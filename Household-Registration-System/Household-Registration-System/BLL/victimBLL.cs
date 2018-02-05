@@ -18,5 +18,8 @@ namespace Household_Registration_System.BLL
         public int house_id { get; set; }
         public int house_condition_id { get; set; }
         public DateTime added_date { get; set; }
+        public int payment1 { get; set; }
+        public int payment2 { get; set; }
+        public int payment3 { get; set; }
     }
 }

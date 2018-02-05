@@ -24,7 +24,7 @@ namespace Household_Registration_System.DAL
 
             try
             {
-                string sql = "INSERT INTO tbl_victim (full_name, dob, family_members, father_name, grand_father_name, photo, house_id, house_condition_id, added_date) VALUES (@full_name, @dob, @family_members, @father_name, @grand_father_name, @photo, @house_id, @house_condition_id, @added_date)";
+                string sql = "INSERT INTO tbl_victim (full_name, dob, family_members, father_name, grand_father_name, photo, house_id, house_condition_id, added_date, payment1, payment2, payment3) VALUES (@full_name, @dob, @family_members, @father_name, @grand_father_name, @photo, @house_id, @house_condition_id, @added_date, @payment1, @payment2, @payment3)";
 
                 SqlCommand cmd = new SqlCommand(sql, conn);
 
@@ -37,6 +37,9 @@ namespace Household_Registration_System.DAL
                 cmd.Parameters.AddWithValue("@house_id", v.house_id);
                 cmd.Parameters.AddWithValue("@house_condition_id", v.house_condition_id);
                 cmd.Parameters.AddWithValue("@added_date", v.added_date);
+                cmd.Parameters.AddWithValue("@payment1", v.payment1);
+                cmd.Parameters.AddWithValue("@payment2", v.payment2);
+                cmd.Parameters.AddWithValue("@payment3", v.payment3);
 
                 conn.Open();
 
@@ -120,6 +123,42 @@ namespace Household_Registration_System.DAL
             }
 
             return dt;
+        }
+        #endregion
+        #region METHOD TO UPDATE PAYMENT
+        public bool UpdatePayment(string paymentNo, int paymentAmount,int victim_id)
+        {
+            SqlConnection conn = new SqlConnection(myconnstrng);
+
+            bool isSuccess = false;
+
+            try
+            {
+                string sql = "UPDATE tbl_victim SET "+paymentNo+"="+paymentAmount+" WHERE victim_id="+victim_id;
+
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                conn.Open();
+
+                int rows = cmd.ExecuteNonQuery();
+                if(rows>0)
+                {
+                    isSuccess = true;
+                }
+                else
+                {
+                    isSuccess = false;
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return isSuccess;
         }
         #endregion
     }

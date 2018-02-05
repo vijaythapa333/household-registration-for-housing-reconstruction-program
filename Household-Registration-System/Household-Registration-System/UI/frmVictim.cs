@@ -45,6 +45,9 @@ namespace Household_Registration_System.UI
             v.house_id = frmHouse.house_id;
             v.house_condition_id = frmHouseCondition.house_condition_id;
             v.added_date = DateTime.Now;
+            v.payment1 = 0;
+            v.payment2 = 0;
+            v.payment3 = 0;
 
             bool success = vdal.Insert(v);
             if(success==true)
